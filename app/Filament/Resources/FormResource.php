@@ -39,6 +39,9 @@ class FormResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('Responses')
+                    ->url('/admin/forms/1/responses')
+                ,
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -60,6 +63,7 @@ class FormResource extends Resource
             'index' => Pages\ListForms::route('/'),
             'create' => Pages\CreateForm::route('/create'),
             'edit' => Pages\EditForm::route('/{record}/edit'),
+            'responses' => Pages\ManageResponses::route('/{record}/responses'),
         ];
     }
 }
