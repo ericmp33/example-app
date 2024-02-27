@@ -55,10 +55,7 @@ class ManageResponses extends ManageRelatedRecords
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DissociateBulkAction::make(),
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                \pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction::make()
             ]);
     }
 }
